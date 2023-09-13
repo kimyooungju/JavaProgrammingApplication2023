@@ -1,7 +1,10 @@
+//학번: 2020136058
+//이름:김용주
+
 
 
 //public final class Pokemon {
-public abstract class Pokemon {
+public abstract class Pokemon extends Weapons  {
     //private int level;
     protected int level;
     private int hp;
@@ -9,6 +12,16 @@ public abstract class Pokemon {
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
 
+    Weapons.Weapon weapon;
+
+    public void setWeapon(Weapons.Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public void perforeWeapon() {
+        System.out.print(this.name + "이(가) ");
+        this.weapon.weaponattack();
+    }
     Flyable flyable;  // 연관 관계
 
     public void setFlyable(Flyable flyable) {  // upcast
