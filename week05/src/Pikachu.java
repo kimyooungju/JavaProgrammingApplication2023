@@ -5,6 +5,7 @@ public class Pikachu extends Pokemon{
         System.out.println("피카피카");
         this.level = 1;
         this.attackRate = 55;
+        this.defenceRate = 40;
         this.setHp(35);
         this.name = "피카츄";
        // this.flyable = new NoFly(); // Association 연관관계, Has-a (Composition) //flyable 객체 사라질시 Nofly 객체 사용불가
