@@ -1,4 +1,4 @@
-
+package Pokemonster;
 
 public class Charizard extends Pokemon{
     public Charizard(Flyable f) {

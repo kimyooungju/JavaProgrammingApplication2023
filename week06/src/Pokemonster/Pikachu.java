@@ -1,4 +1,4 @@
-
+package Pokemonster;
 
 public class Pikachu extends Pokemon{
     public Pikachu(Flyable f) {
