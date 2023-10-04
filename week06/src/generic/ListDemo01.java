@@ -3,9 +3,7 @@ package generic;
 import java.util.ArrayList;
 import java.util.List; // built in
 
-import Pokemonster.Pikachu;
-import Pokemonster.Charizard;
-import Pokemonster.Squirtle;
+import Pokemonster.*;
 
 public class ListDemo01 {
     public static void main(String[] args) {
