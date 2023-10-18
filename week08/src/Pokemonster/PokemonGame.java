@@ -54,16 +54,20 @@ public class PokemonGame {
                 System.out.println("\t1) 전투   2) 도망   3) 종료 : ");
                 menu = scanner.nextInt();
                 if (menu == 1) {
-                    System.out.print("전투 기술 : 1)" + player.skills.get(0) + "   2) " + player.skills.get(1) + "   3) " + player.skills.get(2) + "  : ");
-                    skillMenu = scanner.nextInt();
-                    player.attack(enemy, skillMenu);
-                    enemy.attack(player, (int) (Math.random() * 3) + 1);
-                    // player.attack(enemy, scanner.next());
+                        System.out.print("전투 기술 : 1)" + player.skills.get(0) + "   2) " + player.skills.get(1) + "   3) " + player.skills.get(2) + "  : ");
+                        skillMenu = scanner.nextInt();
+                            player.attack(enemy, skillMenu);
+                            enemy.attack(player, (int) (Math.random() * 3) + 1);
+                            System.out.println("사용 할 수 있는 기술이 아닙니다.");
+                        // player.attack(enemy, scanner.next());
                 } else if (menu == 2) {
 
-                } else {
+                } else if (menu == 3) {
                     System.out.println("게임을 종료합니다.");
                     break;
+                } else {
+                    System.out.println("메뉴에서 선택하세요");
+
                 }
             }
         }catch (InputMismatchException err){
@@ -72,11 +76,11 @@ public class PokemonGame {
         }catch(NullPointerException err) {
             System.out.println("플레이어 객체가 생성되지 않았습니다.");
             System.out.println(" 예외 내용 : " + err.getMessage());
+        }catch(IndexOutOfBoundsException err) {
+            System.out.println("존재하지 않는 스킬입니다. 기술 범위를 벗어남.");
+            System.out.println(" 예외 내용 : " + err.getMessage());
         }catch(Exception err) {
             System.out.println("예외가 발생했습니다.");
-            System.out.println(" 예외 내용 : " + err.getMessage());
-        }catch(IndexOutOfBoundsException err){
-            System.out.println("존재하지 않는 스킬입니다. 기술 범위를 벗어남.");
             System.out.println(" 예외 내용 : " + err.getMessage());
         }finally {
             System.out.println("프로그램 종료");

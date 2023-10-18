@@ -16,6 +16,7 @@ public class Pikachu extends Pokemon{
         this.flyable = f;
       //  this.skills = new String[]{"10만볼트", "스파크", "볼부비부비"};
        // this.specialAttackRate = new int[]{90, 60, 20};
+
        // this.skills = new ArrayList<>();
       //  this.skills.add("10만볼트");
       //  this.skills.add("스파크");
@@ -24,6 +25,7 @@ public class Pikachu extends Pokemon{
        // this.specialAttackRate.add(90);
      //   this.specialAttackRate.add(60);
     //    this.specialAttackRate.add(20);
+
         this.skills = new ArrayList<>(Arrays.asList("10만볼트", "스파크", "볼부비부비"));
         this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 65, 20));
 
