@@ -23,13 +23,14 @@ public class PokemonGame {
                 System.out.println("포켓몬을 고르세요.\n1) 피카츄   2) 꼬부기   3)리자몽 : ");
                 int pokemonPick = scanner.nextInt();
                 if (pokemonPick == 1) {
-                    player = new Pikachu(new NoFly());
+                   // player = new Pikachu(new NoFly());
+                    player = new Pikachu(()-> System.out.println("로켓 추진기로 날아갑니다"));
                     break;
                 } else if (pokemonPick == 2) {
                     player = new Squirtle(new NoFly());
                     break;
                 } else if (pokemonPick == 3) {
-                    player = new Charizard(new NoFly());
+                    player = new Charizard(new Wings());
                     break;
                 } else {
                     System.out.println("정상적인 값이 아닙니다");
