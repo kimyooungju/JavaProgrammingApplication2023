@@ -36,7 +36,7 @@ public class PokemonGame {
                 }
             }
 
-            produceEnemy();  // 적군 생성
+            produceEnemy();  // 적군 생성 (함수생성)
 
             int menu, skillMenu;
             while (true) {
@@ -57,6 +57,7 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
+                    player.performFly();
                     System.out.println("현재 지역을 탈출합니다!");
                     produceEnemy();
                 } else if (menu == 3) {
