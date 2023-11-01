@@ -1,5 +1,7 @@
 package Pokemonster;
 
+import fly.Flyable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 

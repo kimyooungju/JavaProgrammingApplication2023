@@ -1,6 +1,8 @@
 package Pokemonster;
 
-import java.sql.SQLOutput;
+import fly.NoFly;
+import fly.Wings;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
