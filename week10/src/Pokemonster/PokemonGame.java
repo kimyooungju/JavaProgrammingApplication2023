@@ -7,27 +7,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PokemonGame {
+    public static Pokemon enemy = null;
     public static void main(String[] args) {
-        System.out.println("포켓몬 게임을 시작합니다/n야생 포켓몬이 나타낫습니다");
+        System.out.println("포켓몬 게임을 시작합니다.");
       //  System.out.println(Math.random());   //범위 0.0 <= x < 1.0
       //  System.out.println((int)(Math.random() * 6)+1);   //범위 1 <= x < 6
         
-        //적군 랜덤 생성 코드
-        Pokemon enemy = null;
-        int enemyPick = (int)(Math.random() * 3);
-        System.out.println(enemyPick);
-        if(enemyPick == 0){
-            NoFly noFly = new NoFly();
-            enemy = new Pikachu(noFly);
-        }else if(enemyPick == 1){
-            NoFly noFly = new NoFly();
-            enemy = new Squirtle(noFly);
-        }else if(enemyPick == 2){
-            Wings wings = new Wings();
-            enemy = new Charizard(wings);
-        }else{
-            System.out.println("여기는 영원히 실행이 안됩니다");
-        }
 
         try {
             //플레이어 포켓몬스터 선택
@@ -51,6 +36,8 @@ public class PokemonGame {
                 }
             }
 
+            produceEnemy();  // 적군 생성
+
             int menu, skillMenu;
             while (true) {
                 System.out.println("\t1) 전투   2) 도망   3) 종료 : ");
@@ -68,16 +55,15 @@ public class PokemonGame {
                         }else{
                             System.out.println("메뉴에서 공격기술을 선탟하세요.");
                         }
-
                     }
                 } else if (menu == 2) {
-
+                    System.out.println("현재 지역을 탈출합니다!");
+                    produceEnemy();
                 } else if (menu == 3) {
                     System.out.println("게임을 종료합니다.");
                     break;
                 } else {
                     System.out.println("메뉴에서 선택하세요");
-
                 }
             }
         }catch (InputMismatchException err){
@@ -95,5 +81,26 @@ public class PokemonGame {
         }finally {
             System.out.println("프로그램 종료");
         }
+    }
+
+    private static void produceEnemy() {
+        System.out.println("야생 포켓몬이 나타났습니다.");
+        //적군 랜덤 생성 코드
+
+        int enemyPick = (int)(Math.random() * 3);
+        System.out.println(enemyPick);
+        if(enemyPick == 0){
+            NoFly noFly = new NoFly();
+            enemy = new Pikachu(noFly);
+        }else if(enemyPick == 1){
+            NoFly noFly = new NoFly();
+            enemy = new Squirtle(noFly);
+        }else if(enemyPick == 2){
+            Wings wings = new Wings();
+            enemy = new Charizard(wings);
+        }else{
+            System.out.println("여기는 영원히 실행이 안됩니다");
+        }
+
     }
 }
