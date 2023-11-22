@@ -28,8 +28,8 @@ public class Pikachu extends Pokemon{
      //   this.specialAttackRate.add(60);
     //    this.specialAttackRate.add(20);
 
-        this.skills = new ArrayList<>(Arrays.asList("10만볼트", "스파크", "볼부비부비"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 65, 20));
+      //  this.skills = new ArrayList<>(Arrays.asList("10만볼트", "스파크", "볼부비부비"));
+      //  this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 65, 20));
 
     }
 

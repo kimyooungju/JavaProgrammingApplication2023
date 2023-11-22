@@ -19,7 +19,8 @@ public abstract class Pokemon {
    // protected List<String> skills;
    // protected List<Integer> specialAttackRate;
 
-    protected Map<String, Integer> skills;
+    protected Map<Integer, String> skills;
+    protected Map<String, Integer> specialAttackRate;
     private static int pokemonCount = 0;  // 클래스(정적) 변수
 
     Flyable flyable;  // 연관 관계
@@ -94,11 +95,11 @@ public abstract class Pokemon {
 
     public abstract void attack();
    // public void attack(Pokemon targetPokemon, String skills){
-  // public void attack(Pokemon targetPokemon, int skillNumber){
-   public void attack(Pokemon targetPokemon, int skill){
+   public void attack(Pokemon targetPokemon, int skillNumber){
+   //public void attack(Pokemon targetPokemon, int skill){
        // System.out.println(this.name + "이(가 " + targetPokemon.name + "에게 " + this.skills[skillNumber-1] + " 공격 시전!");
-       System.out.println(this.name + "이(가 " + targetPokemon.name + "에게 " + skill + " 공격 시전!");
-        int temporaryAttackRate = (this.attackRate + this.skills.get(skill)- targetPokemon.defenceRate);
+       System.out.println(this.name + "이(가 " + targetPokemon.name + "에게 " + this.skills.get(skillNumber) + " 공격 시전!");
+        int temporaryAttackRate = (this.attackRate + this.specialAttackRate.get(this.skills.get(skillNumber)) - targetPokemon.defenceRate);
         if(temporaryAttackRate <= 0)
             temporaryAttackRate = 0;
         targetPokemon.hp = targetPokemon.hp - (temporaryAttackRate);
