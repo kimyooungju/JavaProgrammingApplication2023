@@ -12,6 +12,7 @@ import java.util.function.UnaryOperator;
 
 public class PokemonGame {
     public static Pokemon enemy = null;
+
     public static void main(String[] args) {
         System.out.println("포켓몬 게임을 시작합니다.");
       //  System.out.println(Math.random());   //범위 0.0 <= x < 1.0
