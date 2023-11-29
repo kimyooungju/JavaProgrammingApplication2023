@@ -105,6 +105,8 @@ public abstract class Pokemon {
         targetPokemon.hp = targetPokemon.hp - (temporaryAttackRate);
         if(targetPokemon.hp <= 0){
             System.out.println(targetPokemon.name + "은(는) 사망!");
+            System.out.println("새로운 적 야생 포켓몬이 나타났습니다.");
+            PokemonGame.produceEnemy();
         }else {
             System.out.println(targetPokemon.name + "의 체력은" + targetPokemon.hp + "입니다");
         }
